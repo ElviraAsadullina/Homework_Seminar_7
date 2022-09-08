@@ -13,13 +13,14 @@ Console.WriteLine("Введите количество строк в масси�
 int m = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите количество столбцов в массиве: ");
 int n = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Заролните массив любыми вещественными числами через Enter: ");
 double[,] nums = new double[m, n];
+Random num = new Random();
 for(int i = 0; i < m; i++)
 {
     for(int j = 0; j < n; j++)
     {
-        nums[i,j] = Convert.ToDouble(Console.ReadLine());
+        nums[i,j] = num.Next(-10, 10) + num.NextDouble();
+        nums[i,j] = Math.Round(nums[i,j], 1);
     }
 }
 Console.WriteLine("Полученный двумерный массив: ");
